@@ -1,0 +1,104 @@
+\documentclass{article}
+
+\usepackage{tcolorbox, varwidth} % Boxes
+\usepackage{amsthm} % For the proof environment
+
+\tcbuselibrary{breakable}
+\tcbuselibrary{theorems}
+\tcbuselibrary{skins}
+
+% Colours
+\definecolor{TheoremColor}{RGB}{34,139,34} % Green
+\definecolor{DefColor}{RGB}{45, 52, 151} % Blue
+\definecolor{CorollaryColor}{RGB}{158, 80, 143} % Purple
+\definecolor{ExampleColor}{RGB}{226,135,67} % Orange
+\definecolor{ProofColor}{RGB}{0,177,160} % Aqua
+
+
+\title{Maths Notes With \LaTeX}
+\author{PolyMaths}
+
+% Theorem
+\newtcbtheorem[number within = section]{theorem}{Theorem}%
+{enhanced,frame empty,interior empty,colframe=TheoremColor!50!white,
+	coltitle=TheoremColor!50!black,fonttitle=\bfseries,colbacktitle=TheoremColor!15!white,
+	borderline={0.5mm}{0mm}{TheoremColor!15!white},
+	borderline={0.5mm}{0mm}{TheoremColor!50!white,dashed},
+	attach boxed title to top center={yshift=-2mm},
+	boxed title style={boxrule=0.4pt},varwidth boxed title}{theo}
+
+% Definition
+\newtcbtheorem[number within = section]{definition}{Definition}%
+{enhanced,frame empty,interior empty,colframe=DefColor!50!white,
+	coltitle=DefColor!50!black,fonttitle=\bfseries,colbacktitle=DefColor!15!white,
+	borderline={0.5mm}{0mm}{DefColor!15!white},
+	borderline={0.5mm}{0mm}{DefColor!50!white,dashed},
+	attach boxed title to top center={yshift=-2mm},
+	boxed title style={boxrule=0.4pt},varwidth boxed title}{defo}
+
+% Corollary
+\newtcbtheorem[number within = section]{corollary}{Corollary}%
+{enhanced,frame empty,interior empty,colframe=CorollaryColor!50!white,
+	coltitle=CorollaryColor!50!black,fonttitle=\bfseries,colbacktitle=CorollaryColor!15!white,
+	borderline={0.5mm}{0mm}{CorollaryColor!15!white},
+	borderline={0.5mm}{0mm}{CorollaryColor!50!white,dashed},
+	attach boxed title to top center={yshift=-2mm},
+	boxed title style={boxrule=0.4pt},varwidth boxed title}{defo}
+
+% Example
+\newtcbtheorem[number within = section]{example}{Example}%
+{enhanced,frame empty,interior empty,colframe=ExampleColor!50!white,
+	coltitle=ExampleColor!50!black,fonttitle=\bfseries,colbacktitle=ExampleColor!15!white,
+	borderline={0.5mm}{0mm}{ExampleColor!15!white},
+	borderline={0.5mm}{0mm}{ExampleColor!50!white,dashed},
+	attach boxed title to top center={yshift=-2mm},
+	boxed title style={boxrule=0.4pt},varwidth boxed title}{defo}
+
+% Proof
+\tcolorboxenvironment{proof}{% `proof' from `amsthm'
+	blanker,breakable,left=5mm,
+	before skip=10pt,after skip=10pt,
+	borderline west={1mm}{0pt}{ProofColor!50!white}}
+
+\begin{document}
+	\maketitle
+	\section{Introduction}
+	Welcome to the template! Let's add a definition.
+	\begin{definition}{Limit of a function}{}
+	If, for every $ \epsilon >0 $ there exists some $ \delta >0 $ such $ 0<|x-a|<\delta $ implies $ |f(x)-L|<\epsilon $ then we say that the function $ f $ has a limit of $ L $ at $ a $ and we write
+	\[\lim_{x\to a}f(x)=L.\]
+	\end{definition}
+	And let's also follow it up with a theorem:
+	\begin{theorem}{Fermat's Last Theorem}{}
+		The equation
+		\[a^n+b^n=c^n\]
+		has no integer solutions for every integer $ n> 2 $.
+	\end{theorem}
+	\begin{proof}
+		I have discovered a truly marvellous proof of this, which this margin is too narrow to contain.
+	\end{proof}
+	But this immediately implies the following corollary:
+	\begin{corollary}{Riemann's}{}
+		Every non-trivial zero of the Riemann $ \zeta $ function has real part one-half.
+	\end{corollary}
+	Which we can demonstrate with an example:
+	\begin{example}{Poincare}{}
+		Consider a simply connected, closed 3-manifold. Notice that it is homeomorphic to the 3-sphere!
+	\end{example}
+		
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
